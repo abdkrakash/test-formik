@@ -17,11 +17,9 @@ function App() {
         .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "Invalid email address")
         .required("Required"),
       password: Yup.string()
-        .required("Required")
-        .matches(
-          /^(?=.[A-Z])(?=.\d).{8,}$/,
-          "Must include one uppercase letter,  one number and be at least 8 characters"
-        ),
+.matches(
+  /^(?=.*[A-Z])(?=.*\d).{8,}$/,          "Must include one uppercase letter,  one number and be at least 8 characters"
+        ).required("Required"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
